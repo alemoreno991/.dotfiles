@@ -1,15 +1,18 @@
 - defaults:
     link:
       relink: true
+      #force: true
 
 - clean: ['~']
 
 - link:
-    ~/.vimrc: nvim/init.vim
+    ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
 
-#- create:
+- create:
+    - ~/.config/nvim
+    - ~/.vim/undodir
 #    - ~/downloads
-#    - ~/.vim/undo-history
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
