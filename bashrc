@@ -11,7 +11,6 @@
 #
 ######################################################################
 
-source ~/.bash_profile
 
 # Set Vim as my default editor
 export EDITOR=vim
@@ -83,38 +82,17 @@ function git_init() {
     fi
 }
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('~/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "~/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "~/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="~/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-###-----------------------------------------------------
-### synth-shell-greeter.sh
-#if [ -f ~/.config/synth-shell/synth-shell-greeter.sh ] && [ -n "$( echo $- | grep i )" ]; then
-#	source ~/.config/synth-shell/synth-shell-greeter.sh
-#fi
-
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
 if [ -f ~/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
 	source ~/.config/synth-shell/synth-shell-prompt.sh
 fi
 
-##-----------------------------------------------------
-## better-ls
-if [ -f ~/.config/synth-shell/better-ls.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source ~/.config/synth-shell/better-ls.sh
-fi
+###-----------------------------------------------------
+### better-ls
+#if [ -f ~/.config/synth-shell/better-ls.sh ] && [ -n "$( echo $- | grep i )" ]; then
+#	source ~/.config/synth-shell/better-ls.sh
+#fi
 
 ##-----------------------------------------------------
 ## alias
@@ -128,7 +106,6 @@ if [ -f ~/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )
 	source ~/.config/synth-shell/better-history.sh
 fi
 
-#neofetch --w3m ~/Descargas/ciclon.jpg
-
 neofetch
 source /usr/share/rvm/gems/ruby-3.0.0/gems/colorls-1.4.6/lib/tab_complete.sh
+source ~/.bash_profile

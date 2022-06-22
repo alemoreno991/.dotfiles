@@ -2,8 +2,8 @@
 
 
 echo "[-] Configuring bashrc  [-]"
-ln -s -f $(pwd)/bashrc ~/.bashrc 
-ln -s -f $(pwd)/bash_profile ~/.bash_profile 
+ln -s $(pwd)/bashrc ~/.bashrc 
+ln -s $(pwd)/bash_profile ~/.bash_profile 
 
 #install alacritty
 echo "[-] Installing alacritty as default terminal emulator [-]"
@@ -11,11 +11,11 @@ sudo add-apt-repository ppa:aslatter/ppa
 sudo apt update
 sudo apt install alacritty
 sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
-ln -s -f $(pwd)/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml 
+ln -s $(pwd)/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml 
 
 #install neofetch
 echo "[-] Configuring welcome message [-]"
-ln -s -f $(pwd)/neofetch/config.conf ~/.config/neofetch/config.conf  
+ln -s $(pwd)/neofetch/config.conf ~/.config/neofetch/config.conf  
 
 # install Hack Nerd Font --> u can choose another at: https://www.nerdfonts.com/font-downloads
 echo "[-] Download fonts [-]"
@@ -36,11 +36,14 @@ echo "[-] Installing pretty prompt [-]"
 #cd synth-shell
 #./setup.sh
 ###################################################################################
-ln -s -f $(pwd)/synth-shell/synth-shell-prompt.config ~/.config/synth-shell/synth-shell-prompt.config 
+ln -s $(pwd)/synth-shell/synth-shell-prompt.config ~/.config/synth-shell/synth-shell-prompt.config 
 
 #install colorls 
 sudo apt-get install ruby-full # WARNING: I had trouble because my package manager in Ubuntu18.04 was not installing ruby>=2.6
 gem install colorls
 mkdir -p ~/.config/colorls
-ln -s -f $(pwd)/colorls/dark_colors.yaml ~/.config/colorls/dark_colors.yaml  
-ln -s -f $(pwd)/colorls/files.yaml ~/.config/colorls/files.yaml  
+ln -s $(pwd)/colorls/dark_colors.yaml ~/.config/colorls/dark_colors.yaml  
+ln -s $(pwd)/colorls/files.yaml ~/.config/colorls/files.yaml  
+
+
+ln -s -f $(pwd)/lvim/config.lua ~/.config/lvim/config.lua
