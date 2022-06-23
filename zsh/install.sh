@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Install zsh
 echo "[-] Installing zsh [-]"
@@ -7,7 +7,7 @@ sudo apt install zsh
 # Installing extra programs 
 echo "[-] Installing programs for enhanced experience [-]"
 sudo apt install ranger zoxide ncdu
-cd ~/Downloads && curl -fsSL https://fnm.vercel.app/install | bash
+curl -fsSL https://fnm.vercel.app/install | bash
 
 # Make zsh your default shell
 echo "[-] Configuring zsh as your default shell [-]"
