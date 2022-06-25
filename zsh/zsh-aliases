@@ -51,8 +51,8 @@ Linux)
 
     # Other aliases
     alias h='history'
-    alias open='xdg-open'
-    alias tree='tree --dirsfirst -F'
+    # alias open='xdg-open'
+    alias tree='tree --dirsfirst -F -C'
 	;;
 
 CYGWIN* | MINGW32* | MSYS* | MINGW*)

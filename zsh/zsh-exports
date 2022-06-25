@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Environment variables set everywhere
+export EDITOR="vim"
+export TERMINAL="alacritty"
+export BROWSER="google-chrome"
+
+# For QT Themes
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 export PATH="$HOME/.local/bin":$PATH
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
