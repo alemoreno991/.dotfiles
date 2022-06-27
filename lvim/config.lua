@@ -7,6 +7,8 @@ a global executable or a path to
 an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+vim.opt.relativenumber = true
+vim.opt.colorcolumn = "81"
 
 -- general
 lvim.log.level = "warn"

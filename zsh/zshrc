@@ -94,3 +94,14 @@ xset r rate 210 40
 # Normal files to source
 neofetch
 conda activate main 
+source /opt/ros/humble/setup.zsh
+
+# This has to go after the conda initialize
+eval "`pip completion --zsh`"
+
+# argcomplete for ros2 & colcon
+eval "`register-python-argcomplete3 ros2`"
+eval "`register-python-argcomplete3 colcon`"
+
+eval "$(fnm env)"
+eval "$(zoxide init zsh)"

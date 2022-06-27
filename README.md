@@ -34,10 +34,11 @@ it's gonna make you want to spend time using a program that looks cool.
 The way I solved the above mentioned is by using the following setup:
 
 - **Terminal emulator:** Alacritty
-- **Shell:** [zsh](zsh/README.md)
-- **Text editor:** LunarVim
+- **Shell:** [zsh](./zsh/README.md)
+- **Text editor:** [LunarVim](./lvim/README.md)
 
 ## References 
 
 [CSAIL-MIT video lecture](https://www.youtube.com/watch?v=YSZBWWJw3mI)
+
 [GitHub unofficial tutorial on dotfiles](http://dotfiles.github.io/tutorials/)

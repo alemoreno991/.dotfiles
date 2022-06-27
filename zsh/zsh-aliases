@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Set LunarVim to open typing "vim"
-alias vim='zsh ~/.local/bin/lvim'
+alias vim='lvim'
 
 # Easy access to config files
 alias vimrc="vim $XDG_CONFIG_HOME/lvim/config.lua"
