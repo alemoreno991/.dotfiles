@@ -34,11 +34,19 @@ it's gonna make you want to spend time using a program that looks cool.
 The way I solved the above mentioned is by using the following setup:
 
 - **Terminal emulator:** Alacritty
+- **Terminal multiplexor:** [tmux](.tmux/README.md)
 - **Shell:** [zsh](./zsh/README.md)
 - **Text editor:** [LunarVim](./lvim/README.md)
 
 ## References 
 
-[CSAIL-MIT video lecture](https://www.youtube.com/watch?v=YSZBWWJw3mI)
+- [CSAIL-MIT video lecture](https://www.youtube.com/watch?v=YSZBWWJw3mI)
+- [GitHub unofficial tutorial on dotfiles](http://dotfiles.github.io/tutorials/)
 
-[GitHub unofficial tutorial on dotfiles](http://dotfiles.github.io/tutorials/)
+# TODO 
+
+Add a system monitor theme like `conky` (see 
+[link](https://github.com/brndnmtthws/conky),
+[link](https://github.com/philer/polycore), 
+[link](https://www.gnome-look.org/browse?cat=124&ord=latest)
+)
