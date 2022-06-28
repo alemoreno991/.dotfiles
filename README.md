@@ -34,7 +34,7 @@ it's gonna make you want to spend time using a program that looks cool.
 The way I solved the above mentioned is by using the following setup:
 
 - **Terminal emulator:** Alacritty
-- **Terminal multiplexor:** [tmux](.tmux/README.md)
+- **Terminal multiplexor:** [tmux](./tmux/README.md)
 - **Shell:** [zsh](./zsh/README.md)
 - **Text editor:** [LunarVim](./lvim/README.md)
 
