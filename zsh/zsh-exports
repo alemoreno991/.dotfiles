@@ -32,3 +32,18 @@ unset __conda_setup
 export EDITOR="lvim"
 export TERMINAL="alacritty"
 export BROWSER="google-chrome"
+
+# export CC=/usr/bin/clang
+# export CXX=/usr/bin/clang++
+
+# ROS related (something to do with URDF)
+export LC_NUMERIC="en_US.UTF-8"
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mujoco-2.2.1/bin/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia/
+export PATH="$LD_LIBRARY_PATH:$PATH"
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+
+export GNUPLOT_DRIVER_DIR=/home/alemoreno991/mambaforge/envs/ros_noetic/libexec/gnuplot/5.4

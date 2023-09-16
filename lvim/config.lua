@@ -9,10 +9,11 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "81"
+vim.g["latex_to_unicode_auto"] = 1 -- Allows automatic latex substitutions on julia
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.colorscheme = "onedarker"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -21,6 +22,11 @@ lvim.colorscheme = "onedarker"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+
+lvim.keys.normal_mode["<Leader>d"] = ":lua require('neogen').generate({ type = 'func' })<CR>"
+lvim.keys.normal_mode["<Leader>dc"] = ":lua require('neogen').generate({ type = 'class' })<CR>"
+lvim.keys.normal_mode["<Leader>df"] = ":lua require('neogen').generate({ type = 'file' })<CR>"
+
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -63,7 +69,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -146,13 +152,31 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+lvim.plugins = {
+  -- {
+  --   "folke/trouble.nvim",
+  --   cmd = "TroubleToggle",
+
+  -- },
+  -- Code documentation plugin (E.g. Doxygen for c/c++)
+  { "danymat/neogen",
+    config = function()
+      require('neogen').setup {
+        enabled = true, --if you want to disable Neogen
+        input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
+        -- jump_map = "<C-e>"       -- (DROPPED SUPPORT, see [here](#cycle-between-annotations) !) The keymap in order to jump in the annotation fields (in insert mode)
+        -- snippet_engine = "luasnip",
+      }
+    end,
+    -- You have to remember to install treesitter for the language you're working
+    -- with (E.g. :TSInstall cpp)
+    requires = "nvim-treesitter/nvim-treesitter",
+    tag = "*",
+  },
+  {
+    "JuliaEditorSupport/julia-vim",
+  }
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
