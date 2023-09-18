@@ -1,0 +1,26 @@
+#!/bin/sh
+
+export PATH="$HOME/.local/bin":$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.fnm:$PATH
+
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+# For QT Themes
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Environment variables set everywhere
+export EDITOR="lvim"
+export TERMINAL="alacritty"
+export BROWSER="google-chrome"
+
+# export CC=/usr/bin/clang
+# export CXX=/usr/bin/clang++
+
+# ROS related (something to do with URDF)
+export LC_NUMERIC="en_US.UTF-8"
+

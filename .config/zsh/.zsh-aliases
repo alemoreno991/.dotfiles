@@ -1,9 +1,5 @@
 #!/bin/sh
 
-alias pycharm="pycharm-professional"
-# Set LunarVim to open typing "vim"
-alias vim='lvim'
-
 # Easy access to config files
 alias vimrc="vim $XDG_CONFIG_HOME/lvim/config.lua"
 alias zshrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"

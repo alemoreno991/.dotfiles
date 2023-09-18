@@ -14,7 +14,6 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
-
 # completions
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -32,13 +31,13 @@ zle -N down-line-or-beginning-search
 autoload -Uz colors && colors
 
 # Useful Functions
-source "$ZDOTDIR/zsh-functions"
+source "$ZDOTDIR/.zsh-functions"
 
 # Normal files to source
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-aliases"
-zsh_add_file "zsh-prompt"
+zsh_add_file ".zsh-exports"
+zsh_add_file ".zsh-vim-mode"
+zsh_add_file ".zsh-aliases"
+zsh_add_file ".zsh-prompt"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
@@ -78,51 +77,7 @@ compinit
 autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
-# TODO Remove these
-setxkbmap -option caps:escape
-xset r rate 210 40
-
-# Speedy keys
-# xset r rate 210 40
-
-# swap escape and caps
-# setxkbmap -option caps:swapescape
-
-# Normal files to source
-neofetch
-# source /opt/ros/humble/setup.zsh
 source /usr/share/vcstool-completion/vcs.zsh
-
-# This has to go after the conda initialize
-eval "`pip completion --zsh`"
-
-# argcomplete for ros2 & colcon
-# eval "`register-python-argcomplete3 ros2`"
-# eval "`register-python-argcomplete3 colcon`"
 
 eval "$(fnm env)"
 eval "$(zoxide init zsh)"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/alemoreno991/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/alemoreno991/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/home/alemoreno991/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/alemoreno991/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/home/alemoreno991/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/home/alemoreno991/mambaforge/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
-
-source ~/Workspace/game-engine/build/devel/setup.zsh
-
-conda deactivate 
-conda deactivate 
