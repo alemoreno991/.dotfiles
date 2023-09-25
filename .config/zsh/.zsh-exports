@@ -14,7 +14,7 @@ export NVM_DIR="$HOME/.config/nvm"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Environment variables set everywhere
-export EDITOR="lvim"
+export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="google-chrome"
 

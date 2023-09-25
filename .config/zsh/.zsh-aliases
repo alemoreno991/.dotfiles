@@ -4,10 +4,9 @@
 alias vim="nvim"
 
 # Easy access to config files
-alias vimrc="vim $XDG_CONFIG_HOME/lvim/config.lua"
 alias zshrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"
-alias zsh_aliases="vim $XDG_CONFIG_HOME/zsh/zsh-aliases"
-alias zsh_exports="vim $XDG_CONFIG_HOME/zsh/zsh-exports"
+alias zsh_aliases="vim $XDG_CONFIG_HOME/zsh/.zsh-aliases"
+alias zsh_exports="vim $XDG_CONFIG_HOME/zsh/.zsh-exports"
 alias tmux_conf="vim $HOME/.tmux.conf"
 
 # Git related

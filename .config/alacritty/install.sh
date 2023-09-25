@@ -1,11 +1,23 @@
 #!/bin/bash
 
+# Install dependencies
+echo "[-] Installing dependencies for alacritty [-]"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup-init.sh && \
+  chmod +x rustup-init.sh && ./rustup-init.sh -y 
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 git -y
+
 # Install alacritty
 echo "[-] Installing alacritty as default terminal emulator [-]"
-sudo apt install alacritty
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty
+cargo build --release
+cargo build --release --no-default-features --features=x11
+sudo cp target/release/alacritty /usr/local/bin
+
 # Set alacritty as your default terminal emulator
 echo "[-] Setting Alacritty as your default terminal emulator [-]"
-sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
+sudo update-alternatives --set x-terminal-emulator /usr/local/bin/alacritty
 # Set your personal configurations
 if [[ -z "${XDG_CONFIG_HOME}" ]]; then
   export XDG_CONFIG_HOME="$HOME/.config"

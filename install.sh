@@ -15,6 +15,9 @@ stow . --target $HOME
 # Install my personal nvim configuration
 ./.config/nvim/install.sh
 
+# Install my personal nvim configuration
+./.config/tmux/install.zsh
+
 # Configure zsh
 chsh -s $(which zsh)
 # source $ZDOTDIR/.zshrc
