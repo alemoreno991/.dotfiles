@@ -7,6 +7,9 @@ sudo apt install alacritty
 echo "[-] Setting Alacritty as your default terminal emulator [-]"
 sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
 # Set your personal configurations
+if [[ -z "${XDG_CONFIG_HOME}" ]]; then
+  export XDG_CONFIG_HOME="$HOME/.config"
+fi
 mkdir -p $XDG_CONFIG_HOME/alacritty
 ln -s $(pwd)/alacritty.yml $XDG_CONFIG_HOME/alacritty/alacritty.yml 
 

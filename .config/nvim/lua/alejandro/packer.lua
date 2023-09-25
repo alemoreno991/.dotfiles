@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
   use('theprimeagen/harpoon')
   use('tpope/vim-fugitive')
 
-  use("christoomey/vim-tmux-navigator")
+  use("christoomey/vim-tmux-navigator", {lazy = false})
 
   use({
       "terrortylor/nvim-comment",
