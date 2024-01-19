@@ -170,11 +170,23 @@ function set_nodevirtenv () {
   fi
 }
 
+# Determine active Conda environment details.
+function set_condaenv () {
+  if test -z "$CONDA_DEFAULT_ENV" ; then
+    CONDA_VIRTUALENV=""
+  else
+    CONDA_VIRTUALENV="${WHITE}[`basename \"$CONDA_DEFAULT_ENV\"`]${COLOR_NONE} "
+  fi
+}
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
   # return value of the last command.
   set_prompt_symbol $?
+  #
+  # Set the PYTHON_VIRTUALENV variable.
+  set_condaenv
 
   # Set the PYTHON_VIRTUALENV variable.
   set_virtualenv
@@ -193,7 +205,7 @@ function set_bash_prompt () {
     BRANCH=''
   fi
 
-  PS1="${LIGHT_GREEN}$(echo $USER | sed 's/SG\.ASUSROBOTS\.COM//'): ${PYTHON_VIRTUALENV}${NODE_VIRTUALENV}${GREEN}${BLUE}\w${COLOR_NONE} ${BRANCH}${PROMPT_SYMBOL} "
+  PS1="${LIGHT_GREEN}$(echo $USER | sed 's/SG\.ASUSROBOTS\.COM//'): ${CONDA_VIRTUALENV}${PYTHON_VIRTUALENV}${NODE_VIRTUALENV}${GREEN}${BLUE}\w${COLOR_NONE} ${BRANCH}${PROMPT_SYMBOL} "
 }
 # Tell bash to execute this function just before displaying its prompt.
 PROMPT_COMMAND=set_bash_prompt
