@@ -1,0 +1,10 @@
+#
+# This file is read by GNU STOW to know which files to avoid symlink.
+#
+/.git
+/.gitignore
+
+install.sh
+
+LICENSE
+README.md
