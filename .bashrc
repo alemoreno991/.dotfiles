@@ -22,9 +22,6 @@
 ###############################################################################
 #  Author: Alejandro Moreno
 ###############################################################################
-if [[ -f "${XDG_CONFIG_HOME}/bash/.bash_config" ]]; then
-    . ${XDG_CONFIG_HOME}/bash/.bash_config
-fi
 if [[ -f "${XDG_CONFIG_HOME}/bash/.bash_exports" ]]; then 
     . ${XDG_CONFIG_HOME}/bash/.bash_exports
 fi
@@ -34,19 +31,8 @@ fi
 if [[ -f "${XDG_CONFIG_HOME}/bash/.bash_prompt" ]]; then
     . ${XDG_CONFIG_HOME}/bash/.bash_prompt
 fi
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/alemoreno991/.local/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/alemoreno991/.local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/alemoreno991/.local/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/alemoreno991/.local/anaconda3/bin:$PATH"
-    fi
+if [[ -f "${XDG_CONFIG_HOME}/bash/.bash_config" ]]; then
+    . ${XDG_CONFIG_HOME}/bash/.bash_config
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
+. "$HOME/.cargo/env"

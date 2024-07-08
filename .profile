@@ -29,3 +29,5 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+export PATH=/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
+. "$HOME/.cargo/env"

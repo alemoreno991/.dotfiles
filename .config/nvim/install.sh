@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "[-] Install dependencies for neovim [-]"
-sudo apt install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config make unzip curl git sudo npm -y 
+sudo apt install ninja-build gettext libtool libtool-bin autoconf automake \
+    cmake g++ pkg-config make unzip curl git sudo npm -y 
 
 echo "[-] Install neovim [-]"
 git clone --depth 1 --branch stable https://github.com/neovim/neovim ~/Downloads/neovim

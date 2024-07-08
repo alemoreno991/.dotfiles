@@ -1,2 +1,11 @@
 #!/bin/bash
 
+# Export Environment Variables for FlightMare simulator
+export FLIGHTMARE_PATH="${HOME}/Workspace/flightmare"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/lib"
+
+# Export Environment Variables for NodeJS
+export PATH="/usr/local/nodejs/bin:$PATH"
+
+# Export Environment Variable for `zoxide`
+export PATH="/home/alemoreno991/.local/bin:$PATH"
